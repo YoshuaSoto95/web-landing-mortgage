@@ -111,3 +111,99 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Scroll Animation Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollElements = document.querySelectorAll('[data-scroll]');
+    
+    // Función para verificar si un elemento está en el viewport
+    const elementInView = (el, offset = 0) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset
+        );
+    };
+    
+    // Función para manejar las animaciones al hacer scroll
+    const handleScrollAnimation = () => {
+        scrollElements.forEach(el => {
+            if (elementInView(el, 100)) {
+                el.classList.add('scroll-animate');
+            }
+        });
+    };
+    
+    // Ejecutar al cargar la página
+    window.addEventListener('load', () => {
+        handleScrollAnimation();
+    });
+    
+    // Ejecutar al hacer scroll
+    window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+    });
+    
+    // Opcional: Reiniciar animaciones al cambiar de tamaño de ventana
+    window.addEventListener('resize', () => {
+        scrollElements.forEach(el => {
+            if (!elementInView(el, 100)) {
+                el.classList.remove('scroll-animate');
+            }
+        });
+        setTimeout(handleScrollAnimation, 300);
+    });
+});
+
+// Back to Top Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const backToTopButton = document.getElementById('backToTop');
+    
+    // Mostrar/ocultar botón al hacer scroll
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) { // Mostrar después de 300px de scroll
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+    
+    // Scroll suave al hacer clic
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Opcional: Si ya tienes una función throttle, úsala aquí
+    const throttle = (func, limit) => {
+        let lastFunc;
+        let lastRan;
+        return function() {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function() {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    };
+    
+    // Usar throttle para el evento scroll
+    window.addEventListener('scroll', throttle(function() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    }, 100));
+});
