@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzia | Préstamos Hipotecarios con las Mejores Tasas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Finanzia</a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#features">Beneficios</a>
+                <a href="#calculator">Simulador</a>
+                <a href="#apply">Solicitar</a>
+                <a href="#testimonials">Testimonios</a>
+                <a href="#contact">Contacto</a>
+                <button class="cta-button mobile-cta">Aplicar ahora</button>
+            </div>
+            
+            <a href="#apply" class="cta-button desktop-cta">Aplicar ahora</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tu hogar ideal comienza con la Hipoteca Perfecta</h1>
+            <p>Obtén tasas competitivas y plazos flexibles para hacer realidad tus sueños de propiedad.</p>
+            <div class="hero-buttons">
+                <a href="#apply" class="cta-button">Solicitar Préstamo</a>
+                <button class="secondary-button">Hablar con un Asesor</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-title">
+            <h2>Por qué elegir Finanzia</h2>
+            <p class="subtitle">Ofrecemos soluciones hipotecarias diseñadas para adaptarse a tus necesidades financieras</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h3>Tasas competitivas</h3>
+                <p>Disfruta de algunas de las tasas de interés más bajas del mercado, lo que significa pagos mensuales más bajos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Aprobación rápida</h3>
+                <p>Proceso de solicitud simplificado con aprobaciones en tan solo 48 horas en la mayoría de los casos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <h3>Flexibilidad total</h3>
+                <p>Elige entre plazos de 10 a 30 años y opciones de pago que se ajusten a tu presupuesto.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Seguridad garantizada</h3>
+                <p>Tus datos y transacciones están protegidos con tecnología de encriptación de última generación.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Asesoramiento experto</h3>
+                <p>Nuestros especialistas hipotecarios te guiarán en cada paso del proceso.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Sin cargos ocultos</h3>
+                <p>Transparencia total: sin cargos sorpresa, sin comisiones ocultas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator" id="calculator">
+        <div class="section-title">
+            <h2>Simula tu Préstamo Hipotecario</h2>
+            <p>Descubre cuánto podrías pedir prestado y cuáles serían tus pagos mensuales</p>
+        </div>
+        <div class="calculator-container">
+            <div class="calculator-content">
+                <h2>Encuentra el préstamo perfecto para ti</h2>
+                <p>Nuestra calculadora hipotecaria te ayuda a estimar tus pagos mensuales en función del monto del préstamo, la tasa de interés y el plazo.</p>
+                <p>Simplemente ingresa tus detalles y ajusta los parámetros para ver cómo afectan tus pagos. Esto te ayudará a planificar tu presupuesto y tomar una decisión informada.</p>
+                <ul style="margin-top: 1.5rem; padding-left: 1.5rem; color: var(--color-gray);">
+                    <li style="margin-bottom: 0.8rem;">Tasas desde 3.5% APR*</li>
+                    <li style="margin-bottom: 0.8rem;">Plazos flexibles de 10 a 30 años</li>
+                    <li style="margin-bottom: 0.8rem;">Préstamos desde $50,000 hasta $5,000,000</li>
+                </ul>
+            </div>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="loan-amount">Monto del préstamo ($)</label>
+                    <input type="range" id="loan-amount" min="50000" max="5000000" step="10000" value="250000" class="range-slider">
+                    <input type="number" id="loan-amount-input" min="50000" max="5000000" step="10000" value="250000">
+                </div>
+                <div class="form-group">
+                    <label for="interest-rate">Tasa de interés (%)</label>
+                    <input type="range" id="interest-rate" min="2.5" max="8" step="0.1" value="4.5" class="range-slider">
+                    <input type="number" id="interest-rate-input" min="2.5" max="8" step="0.1" value="4.5">
+                </div>
+                <div class="form-group">
+                    <label for="loan-term">Plazo del préstamo (años)</label>
+                    <select id="loan-term">
+                        <option value="10">10 años</option>
+                        <option value="15">15 años</option>
+                        <option value="20">20 años</option>
+                        <option value="25">25 años</option>
+                        <option value="30" selected>30 años</option>
+                    </select>
+                </div>
+                <div class="calculator-results">
+                    <h3>Resultados de tu simulación</h3>
+                    <div class="result-item">
+                        <span>Pago mensual:</span>
+                        <span id="monthly-payment">$1,266.71</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Pago total:</span>
+                        <span id="total-payment">$455,987.35</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Interés total:</span>
+                        <span id="total-interest">$205,987.35</span>
+                    </div>
+                </div>
+                <button class="cta-button" style="width: 100%; margin-top: 1.5rem;">Aplicar ahora</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Lead Form Section -->
+    <section class="lead-form" id="apply">
+        <div class="section-title">
+            <h2>Solicita tu préstamo hipotecario</h2>
+            <p class="pharagraph">Completa este formulario y un asesor se pondrá en contacto contigo en menos de 24 horas</p>
+        </div>
+        <div class="form-container">
+            <form id="mortgage-lead-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full-name">Nombre completo*</label>
+                        <input type="text" id="full-name" name="full-name" required placeholder="Ej: Juan Pérez García">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico*</label>
+                        <input type="email" id="email" name="email" required placeholder="Ej: juan.perez@email.com">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Teléfono*</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Ej: +1 555 123 4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Estado (Ubicación)*</label>
+                        <select id="location" name="location" required>
+                            <option value="" disabled selected>Selecciona tu estado</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="property-value">Valor de la propiedad ($)*</label>
+                        <input type="number" id="property-value" name="property-value" required placeholder="Ej: 350000" min="50000" step="1000">
+                    </div>
+                    <div class="form-group">
+                        <label for="loan-amount-desired">Préstamo deseado ($)*</label>
+                        <input type="number" id="loan-amount-desired" name="loan-amount-desired" required placeholder="Ej: 280000" min="50000" step="1000">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="loan-term-desired">Plazo del préstamo*</label>
+                        <select id="loan-term-desired" name="loan-term-desired" required>
+                            <option value="" disabled selected>Selecciona un plazo</option>
+                            <option value="10">10 años</option>
+                            <option value="15">15 años</option>
+                            <option value="20">20 años</option>
+                            <option value="25">25 años</option>
+                            <option value="30">30 años</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="best-time">Mejor hora para contactarte</label>
+                        <select id="best-time" name="best-time">
+                            <option value="" selected>Cualquier hora</option>
+                            <option value="morning">Mañana (9am-12pm)</option>
+                            <option value="afternoon">Tarde (1pm-5pm)</option>
+                            <option value="evening">Noche (6pm-9pm)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-footer">
+                    <div class="privacy-notice">
+                        <input type="checkbox" id="privacy-agreement" name="privacy-agreement" required>
+                        <label for="privacy-agreement">Acepto la <a href="#">Política de Privacidad</a> y autorizo el tratamiento de mis datos para recibir información sobre productos hipotecarios.*</label>
+                    </div>
+                    <button type="submit" class="cta-button">Enviar solicitud</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <p class="pharagraph">Historias reales de personas que lograron su sueño de vivienda con nosotros</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Finanzia hizo que el proceso de obtener mi hipoteca fuera increíblemente fácil. La tasa que me ofrecieron fue mucho mejor que en otros bancos y el servicio al cliente fue excepcional."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AM</div>
+                    <div class="author-info">
+                        <h4>Ana Martínez</h4>
+                        <p>Primera vivienda, 2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Como inversionista, he trabajado con muchas instituciones financieras. Finanzia destaca por su transparencia, rapidez en las aprobaciones y flexibilidad en los términos."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">CR</div>
+                    <div class="author-info">
+                        <h4>Carlos Rodríguez</h4>
+                        <p>Inversionista, 5 propiedades</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Estábamos nerviosos por ser compradores por primera vez, pero nuestro asesor en Finanzia nos guió en cada paso. Obtuvimos una tasa excelente y ahora tenemos nuestra casa soñada."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SG</div>
+                    <div class="author-info">
+                        <h4>Sofía y Gabriel</h4>
+                        <p>Familia joven, 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2>¿Listo para dar el siguiente paso?</h2>
+            <p>Nuestros expertos en hipotecas están disponibles para responder tus preguntas y guiarte a través del proceso de solicitud.</p>
+            <button class="cta-button" style="background-color: var(--color-primary); color: var(--color-accent);">Hablar con un asesor</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">Finanzia</a>
+                <p>Ayudando a familias e individuos a lograr sus sueños de propiedad desde 2005 con soluciones hipotecarias innovadoras y personalizadas.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#features">Beneficios</a></li>
+                    <li><a href="#calculator">Simulador</a></li>
+                    <li><a href="#testimonials">Testimonios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Productos</h3>
+                <ul>
+                    <li><a href="#">Hipoteca fija</a></li>
+                    <li><a href="#">Hipoteca variable</a></li>
+                    <li><a href="#">Hipoteca mixta</a></li>
+                    <li><a href="#">Refinanciamiento</a></li>
+                    <li><a href="#">Hipoteca inversa</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@finanzia.com</p>
+                <p><i class="fas fa-clock"></i> Lunes a Viernes: 9am - 6pm</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Finanzia. Todos los derechos reservados. | <a href="#" style="color: var(--color-primary);">Términos y condiciones</a> | <a href="#" style="color: var(--color-primary);">Política de privacidad</a></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
